@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>CRUD SYSTEM</title>
+</head>
+<body class="bg-indigo-950">
+
+<form class="bg-indigo-900 shadow-md shadow-indigo-700 w-10/12 mx-auto m-10 rounded-2xl p-10">
+    <h1 class="text-4xl text-center text-white pt-10">CRUD SYSTEM</h1>
+
+    <div class="p-10">
+        <label class="text-white p-2 font-semibold" for="pName">productName</label>
+        <input id="pName" type="text" class="bg-indigo-800 text-white border-2 border-indigo-400 w-full rounded-full my-2 px-4 py-2 focus-visible:outline-indigo-400">
+    </div>
+
+    <div class="p-10">
+        <label class="text-white p-2 font-semibold" for="pPrice">productPrice</label>
+        <input id="pPrice" type="text" class="bg-indigo-800 text-white border-2 border-indigo-400 w-full rounded-full my-2 px-4 py-2 focus-visible:outline-indigo-400">
+    </div>
+
+    <div class="p-10">
+        <label class="text-white p-2 font-semibold" for="pCategory">productCategory</label>
+        <input id="pCategory" type="text" class="bg-indigo-800 text-white border-2 border-indigo-400 w-full rounded-full my-2 px-4 py-2 focus-visible:outline-indigo-400" list="clist">
+        <datalist id="clist">
+            <option value="phones">
+            <option value="laptops">
+            <option value="tablets">
+            <option value="TVs">
+            <option value="smart watchs">
+            <option value="head phones">
+        </datalist>
+    </div>
+
+    <div class="p-10">
+        <label class="text-white p-2 font-semibold" for="pImg">productImg</label>
+        <input id="pImg" type="file" class="bg-indigo-800 text-white border-2 border-indigo-400 w-full rounded-full my-2 px-4 py-2 focus-visible:outline-indigo-400">
+    </div>
+
+    <div class="p-10">
+        <label class="text-white p-2 font-semibold" for="pDesc">productDescription</label>
+        <textarea id="pDesc" class="bg-indigo-800 text-white border-2 border-indigo-400 w-full rounded-2xl my-2 px-4 py-2 focus-visible:outline-indigo-400"></textarea>
+    </div>
+
+    <button type="button" onclick="addPrudact()" class="bg-indigo-600 p-2 rounded-full text-white block ms-auto mr-10" id="addBtn">Add product</button>
+    <button type="button" onclick="updateDatacc()" class="bg-emerald-600 p-2 rounded-full text-white hidden ms-auto mr-10" id="updateBtn">Update product</button>
+</form>
+
+<input type="text" id="searchBox" class="bg-indigo-800 text-white border-2 border-indigo-400 w-2/5 rounded-full mb-10 px-4 py-2 focus-visible:outline-indigo-400 mx-auto block" placeholder="search product by name" oninput="searchp()">
+
+<table class="text-center text-white mx-auto w-10/12 mb-10">
+    <thead class="border-b-2 border-indigo-500">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Img</th>
+        <th>Description</th>
+        <th>Action</th>
+    </thead>
+    <tbody id="productTable"></tbody>
+</table>
+
+<script src="counter__.js"></script>
+</body>
+</html>
